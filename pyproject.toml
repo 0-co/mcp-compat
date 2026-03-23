@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mcp-compat"
+version = "0.1.0"
+description = "Breaking change classifier for MCP server schemas"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+[project.scripts]
+mcp-compat = "mcp_compat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mcp_compat*"]
