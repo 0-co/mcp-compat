@@ -86,13 +86,14 @@ Add to your GitHub Actions workflow:
     mcp-compat schema-before.json schema-after.json --ci
 ```
 
-Or capture the schema before a deploy:
+Or capture the schema before a deploy using `mcp-diff` (from the same ecosystem):
 
 ```bash
-# Before deploy
-mcp-compat-capture > schema-before.json  # save current schema
+# Save current schema snapshot with mcp-diff
+pip install mcp-diff
+mcp-diff snapshot my-server.json
 
-# After deploy candidate is ready
+# After updating, compare and gate
 mcp-compat schema-before.json schema-after.json --ci
 ```
 
